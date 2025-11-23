@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="nav">
+            <h2 id="highScore">High Score :0</h2>
+            <h2 id="score">Score :0</h2>
+            <h2 id="timer">Timer :00:00</h2>
+        </div>
+        <div class="board">
+            
+        </div>
+    </main>
+    <div class="modal">
+        <div class="start-game">
+            <h3>Welcome to the snake Game</h3>
+            <button class="btn btn-start">Start Game</button>
+        </div>
+        <div class="game-over">
+            <h3>Game Over</h3>
+            <button class="btn btn-restart">Restart Game</button>
+        </div>
+    </div>
+    
+
+    <script>
+        // Read level parameter from URL
+        const params = new URLSearchParams(window.location.search);
+        const level = params.get("level");
+
+        let script = document.createElement("script");
+        script.type = "module";
+
+        if (level === "hard") {
+            script.src = "script-hard.js";
+        } else {
+            script.src = "script-easy.js";
+        }
+
+        document.body.appendChild(script);
+    </script>
+</body>
+
+</html>

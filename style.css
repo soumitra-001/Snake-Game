@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.btn{
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(9, 9, 9, 0.923);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid rgba(236, 236, 236, 0.962);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.board{
+    flex-grow: 1;
+    width: 100%;
+    border: 3px solid rgba(236, 236, 236, 0.962);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
+}
+
+.block{
+    border: 1px solid rgba(236, 236, 236, 0.504);
+    color: white;
+}
+
+.fill{
+    background-color: rgb(252, 253, 250);
+}
+
+.food{
+    background-color: rgba(207, 33, 21, 0.953);
+}
+
+.modal{
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    background-color: rgba(51, 47, 47, 0.43);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .start-game,.modal .game-over{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    color: whitesmoke;
+}
+.modal .game-over{
+    display: none;
+}
